@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Aug 29, 2018 9:12:48 AM by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="zero" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.pojo.Order" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="Order">
+        <id name="oid" type="java.lang.Integer">
+            <column name="oid"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="com.pojo.Product" embed-xml="true" fetch="select" insert="true" name="product" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="pid"/>
+        </many-to-one>
+        <many-to-one class="com.pojo.Register" embed-xml="true" fetch="select" insert="true" name="register" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="rid"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="orderId" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="orderId"/>
+        </property>
+        <property generated="never" lazy="false" name="orderDate" optimistic-lock="true" type="date" unique="false">
+            <column length="0" name="OrderDate"/>
+        </property>
+    </class>
+</hibernate-mapping>

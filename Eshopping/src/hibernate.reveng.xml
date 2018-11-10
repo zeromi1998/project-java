@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="zero" match-name="Admin"/>
+  <table-filter match-catalog="zero" match-name="Availability"/>
+  <table-filter match-catalog="zero" match-name="Order"/>
+  <table-filter match-catalog="zero" match-name="Product"/>
+  <table-filter match-catalog="zero" match-name="Register"/>
+</hibernate-reverse-engineering>

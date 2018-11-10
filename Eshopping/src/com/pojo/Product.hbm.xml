@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Aug 29, 2018 9:12:48 AM by Hibernate Tools 5.2.3.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="zero" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.pojo.Product" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="Product">
+        <id name="pid" type="java.lang.Integer">
+            <column name="pid"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="productId" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="productID"/>
+        </property>
+        <property generated="never" lazy="false" name="proname" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="proname"/>
+        </property>
+        <property generated="never" lazy="false" name="manufacturedDate" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="manufacturedDate"/>
+        </property>
+        <property generated="never" lazy="false" name="expireDate" optimistic-lock="true" type="string" unique="false">
+            <column length="200" name="expireDate"/>
+        </property>
+        <property generated="never" lazy="false" name="price" optimistic-lock="true" type="java.lang.Double" unique="false">
+            <column name="price" precision="22" scale="0"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="orders" optimistic-lock="true" sort="unsorted" table="Order">
+            <key on-delete="noaction">
+                <column name="pid"/>
+            </key>
+            <one-to-many class="com.pojo.Order" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>
